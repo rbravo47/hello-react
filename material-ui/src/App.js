@@ -1,7 +1,9 @@
+import Button from "@material-ui/core/Button";
+
 function App() {
   return (
     <div>
-      Hello
+      <Button variant="contained">Hello World</Button>
     </div>
   );
 }
