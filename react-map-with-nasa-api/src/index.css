@@ -8,3 +8,26 @@ body {
   height: 100vh;
   position: relative; /* so that info-box can be positioned around the map with absolute*/
 }
+
+.location-icon{
+  font-size: 2rem;
+  color: red;
+}
+
+.loader {
+  min-height: 100vh; /* 1. important to give div 100% height to fill out the entire page*/
+
+
+  /*2. make this current container to be a flex. Then you can arrange items (loading text) within the container(.loader div) in flex style*/
+  display: flex; 
+
+  /*3. pick your main-axis: top to bottom*/
+  flex-direction: column;
+
+  /*4. pick how items will be arranged in your main-axis: center  */
+  justify-content: center;
+
+  /*5. pick how items will be arranged in the cross-axis: center*/
+  align-items: center;
+
+}

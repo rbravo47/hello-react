@@ -1,6 +1,12 @@
 import GoogleMapReact from 'google-map-react';
+import LocationMarker from './LocationMarker';
 
-export default function Map({ center, zoom }) {
+export default function Map({ center, zoom, eventData }) {
+
+
+    console.log(eventData)
+
+
     return (
         <div className="map">
             <GoogleMapReact
@@ -8,16 +14,17 @@ export default function Map({ center, zoom }) {
                 defaultCenter={center}
                 defaultZoom={zoom}
             >
-
+                <LocationMarker lat={center.lat} lng={center.lng} onClick={() => { }} />
             </GoogleMapReact>
         </div >
     )
 };
 
 Map.defaultProps = {
+    // middle of thailand
     center: {
-        lat: 13.0003076,
-        lng: 96.992706
+        lat: 15.8700,
+        lng: 100.9925
     },
     zoom: 6
 }
