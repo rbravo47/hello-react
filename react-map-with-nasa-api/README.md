@@ -1,6 +1,10 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) & [Google Map React](https://github.com/google-map-react/google-map-react) & [NASA Open API](https://eonet.sci.gsfc.nasa.gov/docs/v2.1#eventsAPI) & [iconify](https://iconify.design/)
+
+```sh
+$ yarn add google-map-react @iconify/react @iconify/icons-mdi
+```
 
 ## Available Scripts
 
