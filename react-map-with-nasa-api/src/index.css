@@ -22,6 +22,7 @@ body {
   display: flex; 
 
   /*3. pick your main-axis: top to bottom*/
+  /* because we want to align spinner on top of the loading text, hence we've chosen column*/
   flex-direction: column;
 
   /*4. pick how items will be arranged in your main-axis: center  */
