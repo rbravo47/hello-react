@@ -32,3 +32,7 @@ body {
   align-items: center;
 
 }
+
+.loader img {
+  width: 100px;
+}
