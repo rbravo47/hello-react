@@ -41,8 +41,8 @@ body {
 .location-info {
   /* 1. positioning the box */
   position: absolute;
-  top: 100px;
-  right: 100px;
+  top: 80px;
+  right: 50px;
 
   /* 2. container styling */
   min-height: 200px; /* because contents are dynamic (grow & shrink) */
@@ -59,16 +59,39 @@ body {
 
 .location-info ul {
 
-  /* positioning the box */
+  /* 1. positioning the box */
   margin-top: 10px;
 
-  /* content item styling */
+  /* 3. content item styling */
   list-style-type: none;
   padding: 0;
 }
 
 .location-info li {
 
-  /* content item styling */
+  /* 3. content item styling */
   padding: 5px 0;
+}
+
+.header {
+
+  /*1. positioning the container */
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 99;
+
+  /* 3. content item styling */
+  background-color:firebrick;
+  color: white;
+  padding: 10px;
+
+}
+
+.header h1 {
+  /*3. content item styling*/
+  margin: 0;
+  padding: 0;
+  text-align: center;
 }
