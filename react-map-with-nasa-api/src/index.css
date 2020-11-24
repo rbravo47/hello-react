@@ -12,6 +12,7 @@ body {
 .location-icon{
   font-size: 2rem;
   color: red;
+  cursor: pointer;
 }
 
 .loader {
@@ -35,4 +36,39 @@ body {
 
 .loader img {
   width: 100px;
+}
+
+.location-info {
+  /* 1. positioning the box */
+  position: absolute;
+  top: 100px;
+  right: 100px;
+
+  /* 2. container styling */
+  min-height: 200px; /* because contents are dynamic (grow & shrink) */
+  width: 400px;
+  border-radius: 10px;
+
+
+  /* 3. content item styling */
+  background-color: rgba(0,0,0,0.6);
+  color: white;
+  font-size: 18px;
+  padding: 20px;
+}
+
+.location-info ul {
+
+  /* positioning the box */
+  margin-top: 10px;
+
+  /* content item styling */
+  list-style-type: none;
+  padding: 0;
+}
+
+.location-info li {
+
+  /* content item styling */
+  padding: 5px 0;
 }
