@@ -1,12 +1,9 @@
 import GoogleMapReact from 'google-map-react';
 import LocationMarker from './LocationMarker';
 
+const CATEGORY_WILD_FIRE = 8;
 export default function Map({ center, zoom, eventData }) {
-
-
-    console.log(eventData)
-
-
+    const markers = eventData?.filter((evt) => evt.categories[0].id === CATEGORY_WILD_FIRE).map(evt => <LocationMarker lat={evt.geometries[0].coordinates[1]} lng={evt.geometries[0].coordinates[0]} onClick={() => { }} />)
     return (
         <div className="map">
             <GoogleMapReact
@@ -14,7 +11,7 @@ export default function Map({ center, zoom, eventData }) {
                 defaultCenter={center}
                 defaultZoom={zoom}
             >
-                <LocationMarker lat={center.lat} lng={center.lng} onClick={() => { }} />
+                {markers}
             </GoogleMapReact>
         </div >
     )
