@@ -1,6 +1,6 @@
 import gql from 'graphql-tag';
 
-const CATEGORIES_QUERY = gql`
+export const CATEGORIES_QUERY = gql`
     query Categories {
         categories {
             id
@@ -8,5 +8,3 @@ const CATEGORIES_QUERY = gql`
         }
     }
 `;
-
-export default CATEGORIES_QUERY;

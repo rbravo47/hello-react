@@ -1,5 +1,5 @@
 
-import CATEGORIES_QUERY from '../../queries/category/categories';
+import { CATEGORIES_QUERY } from '../../queries/category/categories';
 import Query from '../Query';
 import { Link } from 'react-router-dom';
 
@@ -9,7 +9,6 @@ export default function Nav() {
 
             <Query query={CATEGORIES_QUERY} id={null}>
                 {
-
                     ({ data: { categories } }) => {
                         return (
                             <nav className="uk-navbar-container" data-uk-navbar>
@@ -20,7 +19,6 @@ export default function Nav() {
                                         </li>
                                     </ul>
                                 </div>
-
                                 <div className="uk-navbar-right">
                                     <ul className="uk-navbar-nav">
                                         {
