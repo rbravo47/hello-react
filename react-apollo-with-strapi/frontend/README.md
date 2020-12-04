@@ -33,3 +33,10 @@ $ npm install moment react-moment
 # we are using apollo-react-client v3
 $ npm install @apollo/client graphql
 ```
+
+
+## Visual Docs
+
+### HTML Structure with UI-Kit (Home)
+
+![html-structure-for-Home](./docs/home-html.png?raw=true "html-structure-for-Home")
