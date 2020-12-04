@@ -13,7 +13,7 @@ export default function Nav() {
                         return (
                             <nav className="uk-navbar-container" data-uk-navbar>
                                 <div className="uk-navbar-left">
-                                    <ul className="uk-navbar-nav">
+                                     <ul className="uk-navbar-nav">
                                         <li>
                                             <Link to="/" >Strapi Blog</Link>
                                         </li>
