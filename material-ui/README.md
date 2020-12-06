@@ -35,7 +35,7 @@ A way to override default Material-ui styles: `palette`, `typography`, `spacing`
 
 It takes only 3 steps.
 
-First, override theme with `createMuiTheme`. You may create new variables or override one of the existing variables (default theme) nested under one of these objects: `palette`, `typography`, `spacing`, `breakpoints`, `density`, `z-index`, `globals`.
+First, override theme with `createMuiTheme`. You may create new variables or override one of the existing variables (in [default theme](https://material-ui.com/customization/default-theme/?expand-path=$.palette)) nested under one of these objects: `palette`, `typography`, `spacing`, `breakpoints`, `density`, `z-index`, `globals`.
 
 ```js
 const theme2 = createMuiTheme({
