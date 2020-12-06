@@ -70,7 +70,14 @@ const useStyles = makeStyles((theme) => ({
 }));
 ```
 
-Else (merely modifying the existing theming variables...), just apply in place
+Else (merely modifying the existing theming variables...), just specify the defined class-name to corresponding props for one of these objects:
+- `palette` -  `prop::color`.
+- `typography` - `prop::variant`.
+- `spacing` - no prop.
+- `breakpoints` - no prop.
+- `density` - no prop.
+- `z-index` - no prop.
+- `globals` - no prop.
 
 ```js
 export default function Palette() {
@@ -96,7 +103,7 @@ These are the main classes found in palette object:
 - success
 - text, background, etc...
 
-To apply, just specify the class-name to one of the styling attribute in component.
+To apply, just specify the class-name to `color` prop in any Material-ui component.
 ```js
 export default function Palette() {
   return (
