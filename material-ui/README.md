@@ -1,21 +1,16 @@
 ## material-ui
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and [Material UI](https://material-ui.com/getting-started/installation/)
-and react-router-dom.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and [Material UI](https://material-ui.com/getting-started/installation/) and react-router-dom.
 
-https://www.udemy.com/course/implement-high-fidelity-designs-with-material-ui-and-reactjs/learn/lecture/16040478#overview
+## 1. Dependencies
 
-
-
-## Dependencies
-
-## material-ui core
+### material-ui core
 
 ```sh
 $ npm install @material-ui/core
 ```
 
-## material-ui style
+### material-ui style
 
 Yes, it's a [separate package](https://material-ui.com/styles/basics/) for `Css-in-JS` solution. And why do I need it? 
 
@@ -26,8 +21,7 @@ Yes, it's a [separate package](https://material-ui.com/styles/basics/) for `Css-
 $ npm install @material-ui/styles
 ```
 
-
-## [Styles](https://material-ui.com/styles/basics/)
+## 2. [Styles](https://material-ui.com/styles/basics/)
 
 There are 3 ways of using style-api:
 - hook(`makeStyles`+`useStyles`). If your React supports hooks, use this for greater flexibility.
@@ -35,13 +29,13 @@ There are 3 ways of using style-api:
 - styled-component(`styled`). Simplest, no class-name needed - hence only support styles for single component.
 
 
-## [Theming](https://material-ui.com/customization/theming/)
+## 3. [Theming](https://material-ui.com/customization/theming/)
 
 A way to override default Material-ui styles: `palette`, `typography`, `spacing`, `breakpoints`, `density`, `z-index`, `globals`.
 
 It takes only 3 steps.
 
-First, override theme with `createMuiTheme`. You may create new variables or override existing variables (defined in default theme)
+First, override theme with `createMuiTheme`. You may create new variables or override one of the existing variables (default theme) nested under one of these objects: `palette`, `typography`, `spacing`, `breakpoints`, `density`, `z-index`, `globals`.
 
 ```js
 const theme2 = createMuiTheme({
@@ -74,3 +68,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 ```
+
+
+## References
+
+- https://www.udemy.com/course/implement-high-fidelity-designs-with-material-ui-and-reactjs/learn/lecture/16040478#overview
