@@ -54,7 +54,9 @@ Then, freely wrap any components that you wish to **apply** customized theme wit
     </ThemeProvider>
 ```
 
-Finally, inject `theme` obj into one of your Styling apis: `makeStyles`, `styled`, `withStyles`
+Finally, 
+
+If you're creating new variables - inject `theme` obj into one of your Styling apis: `makeStyles`, `styled`, `withStyles`
 
 ```js
 const useStyles = makeStyles((theme) => ({
@@ -66,8 +68,25 @@ const useStyles = makeStyles((theme) => ({
   },
   checked: {}
 }));
-
 ```
+
+Else (merely modifying the existing theming variables...), just apply in place
+
+```js
+export default function Palette() {
+  return (
+    <ThemeProvider theme={theme}>
+      <Button color="primary">Primary</Button>
+      <Button color="secondary">Secondary</Button>
+    </ThemeProvider>
+  );
+}
+```
+
+### 3.1 Palette
+
+For color pairs (primary vs secondary), check [here](https://www.designwizard.com/blog/design-trends/colour-combination).
+
 
 
 ## References
