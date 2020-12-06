@@ -39,4 +39,38 @@ There are 3 ways of using style-api:
 
 A way to override default Material-ui styles: `palette`, `typography`, `spacing`, `breakpoints`, `density`, `z-index`, `globals`.
 
+It takes only 3 steps.
 
+First, override theme with `createMuiTheme`. You may create new variables or override existing variables (defined in default theme)
+
+```js
+const theme2 = createMuiTheme({
+  status: {
+    dangerous: blue[500],
+    lol: orange[400]
+  }
+});
+```
+
+Then, freely wrap any components that you wish to **apply** customized theme with a `<ThemeProvider/>` React component.
+
+```js
+    <ThemeProvider theme={theme}>
+        <CustomCheckbox />
+    </ThemeProvider>
+```
+
+Finally, inject `theme` obj into one of your Styling apis: `makeStyles`, `styled`, `withStyles`
+
+```js
+const useStyles = makeStyles((theme) => ({
+  root: {
+    color: theme.status.dangerous,
+    "&$checked": {
+      color: theme.status.lol
+    }
+  },
+  checked: {}
+}));
+
+```
