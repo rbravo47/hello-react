@@ -87,7 +87,26 @@ export default function Palette() {
 
 For color pairs (primary vs secondary), check [here](https://www.designwizard.com/blog/design-trends/colour-combination).
 
+These are the main classes found in palette object:
+- primary
+- secondary
+- error
+- warning 
+- info
+- success
+- text, background, etc...
 
+To apply, just specify the class-name to one of the styling attribute in component.
+```js
+export default function Palette() {
+  return (
+    <ThemeProvider theme={theme}>
+      <Button color="primary">Primary</Button>
+      <Button color="secondary">Secondary</Button>
+    </ThemeProvider>
+  );
+}
+```
 
 ## References
 
