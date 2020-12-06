@@ -27,6 +27,6 @@ $ npm install @material-ui/styles
 ```
 
 There are 3 ways of using style-api:
-- hook(`makeStyles`+`useStyles`). If your react supports hooks, use this for greater flexibility. Note: need to have class-name.
-- higher-order(`withStyles`). It encapsulates `make-use hook` within the higher-order function - It calls `makeStyles` on input::style and `useStyle` that returns output::classes. If your react doesn't supports hook, use this. Note: need to have class-name.
-- styled-component(`styled`). Like higher-order, it abstracts away `make-use hook`. If you're lazy to create a class-name, use this.
+- hook(`makeStyles`+`useStyles`). If your React supports hooks, use this for greater flexibility.
+- higher-order(`withStyles`). It encapsulates `make-use hook` within the higher-order function - It calls `makeStyles` on input::style and `useStyle` that returns output::classes. If your React doesn't support hook or want to avoid hook's boilerplate, use this.
+- styled-component(`styled`). Simplest, no class-name needed - hence only support styles for single component.
