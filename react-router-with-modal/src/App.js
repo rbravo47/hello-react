@@ -1,4 +1,8 @@
+import { Dialog, AppBar, Toolbar, IconButton, Typography, Button, List, ListItem, ListItemText, Divider, Slide } from "@material-ui/core";
+import { makeStyles, ThemeProvider } from "@material-ui/styles";
 import React from "react";
+import CloseIcon from '@material-ui/icons/Close';
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -23,6 +27,7 @@ export default function ModalGalleryExample() {
     <Router>
       <ModalSwitch />
     </Router>
+
   );
 }
 
@@ -47,7 +52,7 @@ function ModalSwitch() {
       </Switch>
 
       {/* Show the modal when a background page is set */}
-      {background && <Route path="/img/:id" children={<Modal />} />}
+      {background && <Route path="/img/:id" children={<MuiModal />} />}
     </div>
   );
 }
@@ -182,4 +187,71 @@ function Modal() {
       </div>
     </div>
   );
+}
+
+
+
+const useStyles = makeStyles({
+  appBar: {
+    position: 'relative',
+  },
+  title: {
+    marginLeft: '2px',
+    flex: 1,
+  },
+});
+
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
+function MuiModal() {
+
+
+  let history = useHistory();
+  let { id } = useParams();
+
+  const classes = useStyles();
+
+
+  const [open, setOpen] = React.useState(false);
+
+  // const handleClickOpen = () => {
+  //   setOpen(true);
+  // };
+
+  const handleClose = (e) => {
+    setOpen(false);
+    e.stopPropagation();
+    history.goBack();
+  };
+
+
+  return (
+    <Dialog fullScreen open={!!id} onClose={handleClose} TransitionComponent={Transition}>
+      <AppBar className={classes.appBar}>
+        <Toolbar>
+          <IconButton edge="start" color="inherit" onClick={handleClose} aria-label="close">
+            <CloseIcon />
+          </IconButton>
+          <Typography variant="h6" className={classes.title}>
+            Sound
+            </Typography>
+          <Button autoFocus color="inherit" onClick={handleClose}>
+            save
+            </Button>
+        </Toolbar>
+      </AppBar>
+      <List>
+        <ListItem button>
+          <ListItemText primary="Phone ringtone" secondary="Titania" />
+        </ListItem>
+        <Divider />
+        <ListItem button>
+          <ListItemText primary="Default notification ringtone" secondary="Tethys" />
+        </ListItem>
+      </List>
+    </Dialog>
+
+  )
+
 }
