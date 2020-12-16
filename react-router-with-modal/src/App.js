@@ -43,12 +43,15 @@ function ModalSwitch() {
   // the modal.
   let background = location.state && location.state.background;
 
+
+  // if you refresh after the dialog is loaded, it will be captured by the router and background will always be true.
+  // however if you enter the path from fresh, it will go into the switch 
   return (
     <div>
       <Switch location={background || location}>
         <Route exact path="/" children={<Home />} />
         <Route path="/gallery" children={<Gallery />} />
-        <Route path="/img/:id" children={<ImageView />} />
+        <Route path="/img/:id" children={<MuiModalBackToHome />} />
       </Switch>
 
       {/* Show the modal when a background page is set */}
@@ -211,20 +214,53 @@ function MuiModal() {
   let { id } = useParams();
 
   const classes = useStyles();
-
-
-  const [open, setOpen] = React.useState(false);
-
-  // const handleClickOpen = () => {
-  //   setOpen(true);
-  // };
-
   const handleClose = (e) => {
-    setOpen(false);
     e.stopPropagation();
     history.goBack();
   };
 
+  return (
+    <Dialog fullScreen open={!!id} onClose={handleClose} TransitionComponent={Transition}>
+      <AppBar className={classes.appBar}>
+        <Toolbar>
+          <IconButton edge="start" color="inherit" onClick={handleClose} aria-label="close">
+            <CloseIcon />
+          </IconButton>
+          <Typography variant="h6" className={classes.title}>
+            Sound
+            </Typography>
+          <Button autoFocus color="inherit" onClick={handleClose}>
+            save
+            </Button>
+        </Toolbar>
+      </AppBar>
+      <List>
+        <ListItem button>
+          <ListItemText primary="Phone ringtone" secondary="Titania" />
+        </ListItem>
+        <Divider />
+        <ListItem button>
+          <ListItemText primary="Default notification ringtone" secondary="Tethys" />
+        </ListItem>
+      </List>
+    </Dialog>
+
+  )
+
+}
+
+
+function MuiModalBackToHome() {
+
+
+  let history = useHistory();
+  let { id } = useParams();
+
+  const classes = useStyles();
+  const handleClose = (e) => {
+    e.stopPropagation();
+    history.push('/gallery'); // hack!always go back to gallery
+  };
 
   return (
     <Dialog fullScreen open={!!id} onClose={handleClose} TransitionComponent={Transition}>
