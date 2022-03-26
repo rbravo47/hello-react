@@ -17,6 +17,12 @@ function App() {
         <SwiperSlide>
           <Video />
         </SwiperSlide>
+        <SwiperSlide>
+          <Video />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Video />
+        </SwiperSlide>
       </Swiper>
     </div>
   );
