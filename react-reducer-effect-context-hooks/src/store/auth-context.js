@@ -9,7 +9,7 @@ const AuthContext = React.createContext({
 
   // can use dummy for ide auto-completion
   onLogout: () => {},
-  onLogin: () => {},
+  onLogin: (email, password) => {},
 });
 
 // why create AuthContextProvider? to encapsulate state management!

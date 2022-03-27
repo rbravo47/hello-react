@@ -11,8 +11,8 @@ function App() {
       <MainHeader />
       <main>
         {/* if we directly use, thats cool, not need to use context */}
-        {!ctx.isLoggedIn && <Login onLogin={ctx.onLogin} />}
-        {ctx.isLoggedIn && <Home onLogout={ctx.onLogout} />}
+        {!ctx.isLoggedIn && <Login />}
+        {ctx.isLoggedIn && <Home />}
       </main>
     </>
   );
