@@ -17,7 +17,7 @@ function Video() {
   };
 
   return (
-    <div className="video" style={{ display: "none" }}>
+    <div className="video">
       <video
         className="video__player"
         loop
